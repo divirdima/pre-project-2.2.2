@@ -1,11 +1,14 @@
 package service;
 
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import model.Car;
 import dao.CarDao;
 import dao.CarDaoImp;
 
-
+@Component
 public class CarService {
 	
 	private static CarDao carDao;

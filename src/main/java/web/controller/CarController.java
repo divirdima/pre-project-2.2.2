@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -15,9 +16,11 @@ import service.CarService;
 @Controller
 public class CarController {
 	
+	@Autowired
+	CarService carServ;
+	
 	@GetMapping(value = "/cars")
 	public String showCars(@RequestParam(value="count", required=false) Integer c, Model model) {
-		CarService carServ = new CarService();
 		int count = Optional.ofNullable(c).orElse(5);
 		model.addAttribute("cars", carServ.getCars(count));
 		return "cars";

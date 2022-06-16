@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import model.Car;
 
-@Component
 public class CarDaoImp implements CarDao{
 
 	private static List<Car> cars;
